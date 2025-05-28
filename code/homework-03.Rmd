@@ -53,4 +53,9 @@ ggplot(data, aes(x = is_weekend, y = steps)) +
     axis.title.x = element_text(face = "bold"),
     axis.title.y = element_text(face = "bold")
   )
+
 ```
+# Figure 1. Daily step counts separated by weekdays and weekends. 
+Each point represents the number of steps taken on a specific day, while the bars represent the average (mean) step count for each category. The data show that, on average, more steps were taken on weekdays than weekends, likely due to a more structured schedule including classes and commuting.
+
+
