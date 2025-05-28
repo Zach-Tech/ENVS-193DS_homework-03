@@ -1,0 +1,27 @@
+---
+title: "homework-03"
+output: html_document
+---
+
+https://github.com/Zach-Tech/ENVS-193DS_homework-03.git
+
+
+```{r setup}
+# Load required libraries
+library(tidyverse)
+library(here)
+library(gt)
+library(janitor)
+library(readxl)
+```
+
+## Problem 1a. Data Summarizing (5 points)
+
+To compare my response variable—**number of steps per day**—between different **days of the week**, I could calculate the **mean number of steps** for each day. This would allow me to identify patterns, such as whether I am more active on weekdays compared to weekends.
+
+This comparison is informative because my schedule varies during the week. For example, I have back-to-back classes on Monday and Wednesday, which usually requires more walking, whereas I tend to stay home on Sundays, resulting in fewer steps.
+
+# Load the data
+```{r}
+data <- read_csv(here("data", "personal_data.csv"))
+```
