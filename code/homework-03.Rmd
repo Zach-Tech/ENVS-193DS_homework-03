@@ -58,4 +58,28 @@ ggplot(data, aes(x = is_weekend, y = steps)) +
 # Figure 1. Daily step counts separated by weekdays and weekends. 
 Each point represents the number of steps taken on a specific day, while the bars represent the average (mean) step count for each category. The data show that, on average, more steps were taken on weekdays than weekends, likely due to a more structured schedule including classes and commuting.
 
+```{r}
+## Problem 1d. Table Presentation (10 points)
+
+library(gt)
+
+# Create table from summary
+steps_summary %>%
+  mutate(mean_steps = round(mean_steps, 1)) %>%  # round to 1 decimal
+  gt() %>%
+  tab_header(
+    title = "Average Daily Step Count",
+    subtitle = "Comparison of Mean Steps on Weekdays vs. Weekends"
+  ) %>%
+  cols_label(
+    is_weekend = "Day Type",
+    mean_steps = "Mean Number of Steps"
+  ) %>%
+  tab_options(
+    table.font.size = 14,
+    heading.title.font.size = 16,
+    heading.subtitle.font.size = 14
+  )
+```
+
 
