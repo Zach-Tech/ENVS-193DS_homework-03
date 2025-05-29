@@ -55,7 +55,7 @@ ggplot(data, aes(x = is_weekend, y = steps)) +
   )
 
 ```
-# Figure 1. Daily step counts separated by weekdays and weekends. 
+## Figure 1. Daily step counts separated by weekdays and weekends. 
 Each point represents the number of steps taken on a specific day, while the bars represent the average (mean) step count for each category. The data show that, on average, more steps were taken on weekdays than weekends, likely due to a more structured schedule including classes and commuting.
 
 ```{r}
@@ -82,4 +82,34 @@ steps_summary %>%
   )
 ```
 
+
+## Problem 2a. Affective Visualization Description  
+An affective visualization of my personal data could take the form of a color-coded spiral that maps my daily mood using warm and cool tones. Each loop in the spiral would represent one week, with dots or segments sized by how many steps I took that day and shaded by how many hours I slept. The center would start with the earliest week and spiral outward with each passing day. I might use red for low moods and blue or green for more positive moods to evoke an emotional response. This form of visualization would help viewers feel the rhythm of my week—the fluctuations in energy, rest, and emotion—rather than just read it from a chart.
+
+##Code for Dataset Generation
+
+```{r}
+library(tibble)
+library(readr)
+library(here)
+
+data <- tibble(
+  date = as.Date("2025-05-12") + 0:13,
+  steps = c(6543, 7021, 8120, 4402, 6051, 10032, 9211,
+            7421, 5120, 8301, 6003, 4555, 11032, 10567),
+  sleep_hours = c(6.5, 7.2, 6.8, 5.9, 6.0, 8.0, 7.5,
+                  6.4, 5.5, 7.1, 6.0, 6.3, 8.5, 7.8),
+  mood = c(3, 4, 4, 2, 3, 5, 4, 3, 2, 4, 3, 2, 5, 5),
+  is_weekend = weekdays(as.Date("2025-05-12") + 0:13) %in% c("Saturday", "Sunday")
+)
+
+# Save to your data folder
+write_csv(data, here("data", "personal2_data.csv"))
+```
+
+### Problem 2b. Sketch of Affective Visualization
+
+Here is a sketch of my affective data visualization idea:
+
+![](D:\Git\ENVS-193DS_homework-03\ENVS-193DS_homework-03\Affective Data Spiral Sketch.png)
 
