@@ -2,8 +2,9 @@
 title: "homework-03"
 name: Sanghyeon Han
 output:
-  html_document: default
+  word_document: default
   pdf_document: default
+  html_document: default
 ---
 
 https://github.com/Zach-Tech/ENVS-193DS_homework-03.git
